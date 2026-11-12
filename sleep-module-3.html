@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Screens, Sleep &amp; Circadian Health: A Learning Module for Emerging Adults</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#1b2433;--mute:#46526a;--pri:#1d4a85;--acc:#9a4a06;--tea:#0b6b63;--line:#c9d2e0;--hi:#a9c3e8;--on-pri:#fff;--warn:#fff4e5;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1624;--card:#18223a;--ink:#eef2f9;--mute:#b6c2d8;--pri:#8fb8f5;--acc:#f4b26a;--tea:#5fd3c6;--line:#364563;--hi:#35527f;--on-pri:#0f1624;--warn:#2b2113;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1624;--card:#18223a;--ink:#eef2f9;--mute:#b6c2d8;--pri:#8fb8f5;--acc:#f4b26a;--tea:#5fd3c6;--line:#364563;--hi:#35527f;--on-pri:#0f1624;--warn:#2b2113;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.skip{position:absolute;left:-999px;top:0;background:var(--pri);color:var(--on-pri);padding:.75rem 1rem;z-index:5}
+.skip:focus{left:0}
+a{color:var(--pri)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+header.hero{background:var(--pri);color:var(--on-pri);padding:3rem 1.25rem 2.5rem}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.25rem}
+header .wrap{padding:0}
+h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.15;margin:.2rem 0 1rem}
+h2{font-size:1.7rem;line-height:1.25;margin:0 0 .75rem;color:var(--pri)}
+h3{font-size:1.2rem;margin:1.25rem 0 .4rem}
+.eyebrow{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
+nav{background:var(--card);border-bottom:1px solid var(--line)}
+nav ul{list-style:none;margin:0 auto;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.25rem;max-width:860px}
+nav a{display:inline-block;padding:.65rem .8rem;min-height:44px;text-decoration:none;font-weight:600;border-radius:8px}
+nav a:hover{background:var(--bg);text-decoration:underline}
+section{padding:2.5rem 0;border-bottom:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.4rem;margin:1rem 0}
+.obj{background:var(--warn);border-left:6px solid var(--acc)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.stat{font-size:2.3rem;font-weight:800;color:var(--acc);line-height:1}
+.mute{color:var(--mute)}
+figure{margin:1.25rem 0}
+figcaption{color:var(--mute);font-size:.95rem;margin-top:.4rem}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:.5rem;list-style:none;padding:0;margin:1rem 0}
+.flow li{flex:1 1 150px;background:var(--card);border:2px solid var(--pri);border-radius:12px;padding:.8rem;text-align:center}
+.flow li b{display:block;color:var(--pri)}
+.flow li.arrow{flex:0 0 auto;border:0;background:none;align-self:center;padding:0;font-size:1.6rem;color:var(--acc)}
+.bars{list-style:none;padding:0;margin:0}
+.bars li{display:grid;grid-template-columns:minmax(120px,36%) 1fr;gap:.2rem .8rem;align-items:center;margin:.7rem 0}
+.bars .track{position:relative;height:26px;background:var(--bg);border:1px solid var(--line);border-radius:6px;overflow:visible}
+.bars .hi,.bars .lo{position:absolute;left:0;top:0;bottom:0;border-radius:5px 0 0 5px}
+.bars .hi{background:var(--hi)}
+.bars .lo{background:var(--pri)}
+.bars .acc .lo{background:var(--acc)}
+.bars .tea .lo{background:var(--tea)}
+.bars .ref{position:absolute;top:-5px;bottom:-5px;border-left:3px dashed var(--ink)}
+.bars .val{grid-column:2;font-weight:700}
+@media (max-width:540px){.bars li{grid-template-columns:1fr}.bars .val{grid-column:1}}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:.8rem 0}
+summary{cursor:pointer;padding:1rem 1.25rem;font-weight:700;font-size:1.1rem;min-height:44px}
+details>div{padding:0 1.25rem 1.1rem}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap;margin:.3rem 0}
+.tag{border:1px solid var(--pri);color:var(--pri);border-radius:99px;padding:.1rem .7rem;font-size:.9rem;font-weight:600}
+fieldset{border:1px solid var(--line);border-radius:12px;margin:1rem 0;padding:1rem 1.25rem;background:var(--card)}
+legend{font-weight:700;padding:0 .4rem}
+label{display:flex;gap:.6rem;align-items:flex-start;padding:.55rem .3rem;min-height:44px;cursor:pointer}
+input[type=radio]{width:1.3rem;height:1.3rem;margin-top:.2rem;accent-color:var(--pri)}
+button{font:inherit;font-weight:700;background:var(--pri);color:var(--on-pri);border:0;border-radius:8px;padding:.7rem 1.3rem;min-height:44px;cursor:pointer}
+.fb{margin:.6rem 0 0;font-weight:600}
+.fb.ok{color:var(--tea)}.fb.no{color:var(--acc)}
+ul.tight{padding-left:1.2rem;margin:.3rem 0}
+footer{padding:2rem 0 3rem;color:var(--mute);font-size:.95rem}
+ol.refs{list-style:none;padding:0;font-size:.95rem}
+ol.refs li{margin:.5rem 0;padding-left:2rem;text-indent:-2rem;overflow-wrap:anywhere}
+.tw{overflow-x:auto;margin:1rem 0}table{border-collapse:collapse;width:100%;min-width:640px;background:var(--card)}caption{text-align:left;font-weight:700;padding:.4rem 0;color:var(--mute)}th,td{border:1px solid var(--line);padding:.6rem .7rem;text-align:left;vertical-align:top;font-size:.95rem}thead th{background:var(--pri);color:var(--on-pri)}ol.steps{padding-left:1.3rem;margin:.3rem 0}.note{color:var(--mute);font-style:italic;font-size:.95rem}
+.ctl{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}.ctl label{padding:0;min-height:0;align-items:center}select{font:inherit;min-height:44px;padding:.4rem .6rem;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px}button:disabled{opacity:.6;cursor:not-allowed}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="hero">
+ <div class="wrap">
+  <p class="eyebrow">Digital Wellness Learning Module</p>
+  <h1>Screens, Sleep &amp; Your Body Clock</h1>
+  <p>Four evidence-based strategies to protect sleep and circadian health for emerging adults (ages 18–29) and the student health staff who support them. About 25 minutes, self-paced.</p>
+ </div>
+</header>
+<nav aria-label="Module sections"><ul>
+ <li><a href="#audio">Audio</a></li><li><a href="#goals">Goals</a></li><li><a href="#why">Why it matters</a></li><li><a href="#science">The science</a></li><li><a href="#culture">Culture &amp; context</a></li><li><a href="#skills">Skills</a></li><li><a href="#strategies">Strategies</a></li><li><a href="#check">Check yourself</a></li><li><a href="#refs">References</a></li>
+</ul></nav>
+<main id="main" class="wrap">
+
+<section id="audio" aria-labelledby="h-aud">
+ <h2 id="h-aud">Audio summary</h2>
+ <p>Listen to a one-minute overview of this module, or read the transcript. Your device’s built-in voice reads the text aloud.</p>
+ <div class="ctl"><button id="play" type="button">Play summary</button><button id="stop" type="button">Stop</button><label for="rate">Speed <select id="rate"><option value="0.8">Slow</option><option value="1" selected>Normal</option><option value="1.25">Fast</option></select></label></div>
+ <p id="astat" role="status" class="note"></p>
+ <details><summary>Transcript</summary><div><p id="trans"></p></div></details>
+</section>
+
+<section id="goals" aria-labelledby="h-goals">
+ <h2 id="h-goals">Learning goals</h2>
+ <div class="card obj">
+  <p><strong>By the end of this module you will be able to:</strong></p>
+  <ol>
+   <li>Explain how evening screen light reaches the body clock and what it changes.</li>
+   <li>Describe why emerging adults are especially exposed to this risk.</li>
+   <li>Compare four evidence-based strategies, including barriers and who benefits most.</li>
+   <li>Adapt advice so it respects culture, work and family responsibilities.</li>
+  </ol>
+ </div>
+</section>
+
+<section id="why" aria-labelledby="h-why">
+ <h2 id="h-why">Why emerging adults?</h2>
+ <p>Emerging adulthood is the stretch between adolescence and settled adult life (Arnett, 2007). Parents’ rules and school schedules fade, and young people must manage sleep, study and screens on their own (Roisman et al., 2004). Mental health vulnerability also rises: anxiety, depression and pre-sleep hyperarousal become more common.</p>
+ <div class="grid">
+  <div class="card"><div class="stat">90%+</div><p>use a screen in the hour before bed (Gradisar et al., 2013).</p></div>
+  <div class="card"><div class="stat">76%+</div><p>of adults keep screens in the bedroom, with young adults highest (Gradisar et al., 2013).</p></div>
+  <div class="card"><div class="stat">5 features</div><p>define this stage: identity exploration, instability, self-focus, feeling in-between, possibilities (Arnett, 2007).</p></div>
+ </div>
+<div class="card"><h3>Psychological drives</h3><p>High socio-emotional responsiveness and desire for peer connectedness create vulnerability to digital telepressure and Fear of Missing Out (FOMO) (Steinberg, 2008). Social apps help young adults sustain close peer ties (Vaterlaus et al., 2016), which makes switching off feel costly.</p><p>Adolescent development pairs an early-maturing reward system with a slower-maturing cognitive control system (Steinberg, 2008); resisting hyper-stimulating, algorithm-driven media in unstructured evenings remains demanding in emerging adulthood.</p></div>
+</section>
+
+<section id="science" aria-labelledby="h-sci">
+ <h2 id="h-sci">The science: from screen to sleep</h2>
+ <p>Screens emit blue-enriched light with a peak between 450 and 480 nm. This light is detected by special retinal cells that signal the brain’s master clock (Schöllhorn et al., 2023).</p>
+ <figure aria-labelledby="cap-flow">
+  <ol class="flow">
+   <li><b>1. LED screen</b>Blue-enriched light, 450–480 nm</li><li class="arrow" aria-hidden="true">→</li>
+   <li><b>2. ipRGC cells</b>Retinal cells containing melanopsin</li><li class="arrow" aria-hidden="true">→</li>
+   <li><b>3. SCN</b>Master clock in the hypothalamus</li><li class="arrow" aria-hidden="true">→</li>
+   <li><b>4. Body effects</b>Less melatonin, later clock, lighter sleep</li>
+  </ol>
+  <figcaption id="cap-flow">Figure 1. The pathway from evening screen light to disrupted sleep. Even low light (under 80 lux) can have an effect when melanopic content is high (Schöllhorn et al., 2023).</figcaption>
+ </figure>
+
+ <h3>What evening screens do</h3>
+ <figure aria-labelledby="cap-1"><ul class="bars" id="c1"></ul>
+  <figcaption id="cap-1">Figure 2. Percent change from evening screen exposure. Dark bar = lower end of the reported range; light extension = upper end. Sources: Chang et al. (2015); Chinoy et al. (2018); Schöllhorn et al. (2023).</figcaption></figure>
+ <figure aria-labelledby="cap-2"><ul class="bars" id="c2"></ul>
+  <figcaption id="cap-2">Figure 3. Shift in Dim Light Melatonin Onset (DLMO), in minutes. Screens push the clock later; the multicomponent strategy (Strategy 4) nudges it earlier. Sources: Chang et al. (2015); Chinoy et al. (2018); Wescott et al. (2026).</figcaption></figure>
+ <figure aria-labelledby="cap-3"><ul class="bars" id="c3"></ul>
+  <figcaption id="cap-3">Figure 4. Odds ratios for in-bed social media use. The dashed line marks 1.0 (no added risk); values to its right mean higher odds. Source: Bhat et al. (2018).</figcaption></figure>
+ <p><strong>Also affected:</strong> deep sleep (slow-wave sleep) is compressed, REM sleep is suppressed, the normal nightly drop in body temperature is dampened, and next-morning attention worsens (more omission errors on attention tests) (Green et al., 2017; Höhn et al., 2024).</p>
+</section>
+
+<section id="culture" aria-labelledby="h-cul">
+ <h2 id="h-cul">Culture and context: one size does not fit all</h2>
+ <p>“Emerging adulthood” was built on Western, middle-class assumptions of independence and self-focus. For many young people, adulthood means family responsibility, work, or caring for others, often with little time for prolonged exploration (Arnett, 2007; Katsiaficas et al., 2014).</p>
+ <div class="grid">
+  <div class="card"><h3>Family first</h3><p>Collectivist and immigrant-origin students may support household finances, translate or care for siblings (Katsiaficas et al., 2014).</p></div>
+  <div class="card"><h3>Economic necessity</h3><p>Low-income and first-generation students may take on full adult roles right after school (Katsiaficas et al., 2014).</p></div>
+  <div class="card"><h3>Code-switching</h3><p>Students move between campus self-reliance and home interdependence (Katsiaficas et al., 2014).</p></div>
+  <div class="card"><h3>Societal norms</h3><p>In Greek higher education, family capacities, norm compliance and multi-generational co-residence are emphasized over early independence (Tsipianitis &amp; Karalis, 2019).</p></div>
+ </div>
+ <div class="card obj"><strong>Practice tip:</strong> Avoid blanket rules like “turn off all devices at 9 PM.” Screens may be a student’s only internet access, a family lifeline or a stress-relief tool. Offer options that protect sleep while keeping access: spectral display tuning, a flexible wind-down window and bedroom changes that fit the space.</div>
+</section>
+
+<section id="skills" aria-labelledby="h-sk">
+ <h2 id="h-sk">Building the skills</h2>
+ <p>Information alone does not change behavior. Programs that include <strong>supervised skills practice are 5 to 7 times more likely</strong> to produce lasting change than lectures about sleep hygiene (Conley, 2015).</p>
+ <details><summary>Five social-emotional skills applied to screens</summary><div><p>Adapted from the CASEL competencies as used in higher education (Conley, 2015).</p><ul class="tight">
+  <li><strong>Self-awareness:</strong> notice pre-sleep arousal and FOMO triggers.</li>
+  <li><strong>Self-management:</strong> relaxation, cognitive restructuring and limits on compulsive checking.</li>
+  <li><strong>Social awareness:</strong> consider how late-night messages affect peers and partners.</li>
+  <li><strong>Relationship skills:</strong> set healthy digital boundaries without losing connection.</li>
+  <li><strong>Responsible decision-making:</strong> plan study time and a screen curfew.</li></ul></div></details>
+ <details><summary>What effective practice looks like</summary><div><ul class="tight">
+  <li>Demonstration and supervised instruction</li><li>In-session practice plus daily home practice logs</li><li>Reminders such as weekly text prompts</li><li>Delivery through first-year seminars, residence halls and counseling centers</li>
+  <li>Methods: mindfulness (MBSR), CBT techniques for bedtime procrastination, progressive muscle relaxation and breathing</li></ul></div></details>
+ <details><summary>How to measure progress</summary><div><ul class="tight">
+  <li><strong>Body:</strong> DLMO, actigraphy, light sensors</li><li><strong>Behavior and attention:</strong> sleep scales (PSQI, ESS, KSS, MISS), continuous performance tasks</li><li><strong>Mood and media use:</strong> PHQ-4, CES-D, in-bed media logs</li></ul></div></details>
+</section>
+
+<section id="strategies" aria-labelledby="h-str">
+ <h2 id="h-str">Four evidence-based strategies</h2>
+ <p>Each strategy below is set out in depth: what it is, the mechanism, the evidence, why it fits emerging adults, how to put it into practice, barriers and ways through, moderators, measurement and cultural adaptation. Start with the comparison, then open each strategy.</p>
+ <div class="tw" role="region" aria-label="Strategy comparison table" tabindex="0"><table><caption>Table 1. The four strategies at a glance</caption><thead><tr><th scope="col">Strategy</th><th scope="col">Main target</th><th scope="col">Key evidence</th><th scope="col">Best when</th><th scope="col">Main barrier</th></tr></thead><tbody>
+ <tr><th scope="row">1. Spectral tuning</th><td>Melanopic light reaching ipRGCs</td><td>Less melatonin suppression and shorter sleep latency (Schöllhorn et al., 2023)</td><td>Evening screen work is unavoidable</td><td>Weak night-mode tools</td></tr>
+ <tr><th scope="row">2. Bedroom sanctuary</th><td>In-bed arousal and FOMO</td><td>Insomnia OR 2.3 (Bhat et al., 2018)</td><td>Phone use in bed is habitual</td><td>FOMO, phone alarm</td></tr>
+ <tr><th scope="row">3. Disconnection window</th><td>Melatonin rise and deep sleep</td><td>Melatonin recovers in about 50 min (Höhn et al., 2024)</td><td>The student controls the evening</td><td>Deadlines, shifts</td></tr>
+ <tr><th scope="row">4. Chronotherapy</th><td>Delayed clock, low daytime light</td><td>DLMO about 35 min earlier; mood improved (Wescott et al., 2026)</td><td>Delayed sleep timing or low mood</td><td>Adherence, weather</td></tr>
+ </tbody></table></div>
+ <div id="strats"></div>
+</section>
+
+<section id="check" aria-labelledby="h-chk">
+ <h2 id="h-chk">Check your understanding</h2>
+ <p>Choose an answer, then select <em>Check answer</em>. Retrieval practice helps memory.</p>
+ <div id="quiz"></div>
+</section>
+
+<section id="refs" aria-labelledby="h-ref" style="border:0">
+ <h2 id="h-ref">References</h2>
+ <details><summary>Show full reference list</summary><div><ol class="refs" id="reflist"></ol></div></details>
+</section>
+</main>
+<footer><div class="wrap">Educational content, not medical advice. Anyone with persistent insomnia, low mood or anxiety should talk with a health professional or campus health service.</div></footer>
+
+<script>
+function bars(id,items,max,ref){
+ var ul=document.getElementById(id);
+ items.forEach(function(d){
+  var li=document.createElement("li");if(d.k)li.className=d.k;
+  var lab=document.createElement("span");lab.textContent=d.l;
+  var tr=document.createElement("div");tr.className="track";tr.setAttribute("aria-hidden","true");
+  tr.innerHTML='<div class="hi" style="width:'+(d.hi/max*100)+'%"></div><div class="lo" style="width:'+(d.lo/max*100)+'%"></div>'+(ref?'<div class="ref" style="left:'+(ref/max*100)+'%"></div>':'');
+  var v=document.createElement("span");v.className="val";v.textContent=d.t;
+  li.appendChild(lab);li.appendChild(tr);li.appendChild(v);ul.appendChild(li);
+ });
+}
+bars("c1",[{l:"Melatonin suppression",lo:50,hi:55,t:"50% to 55% lower",k:"acc"},{l:"Longer time to fall asleep",lo:50,hi:50,t:"Up to 50% longer",k:"acc"}],60);
+bars("c2",[{l:"Screens: clock delay",lo:33,hi:90,t:"33 to 90+ min later",k:"acc"},{l:"Strategy 4: clock advance",lo:35,hi:35,t:"About 35 min earlier",k:"tea"}],100);
+bars("c3",[{l:"Insomnia (high in-bed use)",lo:2.3,hi:2.3,t:"OR 2.3",k:"acc"},{l:"Short sleep, under 6 h",lo:2,hi:2,t:"About double (approx. OR 2)",k:"acc"},{l:"Clinical anxiety",lo:1.37,hi:1.73,t:"OR 1.37 to 1.73"}],3,1);
+
+var S=[
+{"t":"Evening spectral display tuning","tg":["Light","2–4 h before bed"],
+"o":"Spectral display tuning lowers the melanopic content of screen light in the 2 to 4 hours before habitual bedtime, using spectrally tuned displays, blue-blocking software or blue-blocking eyewear. Unlike dimming or screen bans, it removes the 450–480 nm light that drives the clock while keeping brightness, contrast and color usable (Schöllhorn et al., 2023).",
+"mech":"Short-wavelength light activates melanopsin in ipRGCs, which signal the suprachiasmatic nucleus. Melanopic irradiance, not brightness alone, defines how strongly a display disrupts sleep latency, melatonin and alertness (Schöllhorn et al., 2023). Cutting it protects the evening melatonin rise and the timing of the clock (Chang et al., 2015).",
+"ev":["Evening use of light-emitting eReaders, compared with print books, suppressed melatonin, delayed circadian timing and reduced next-morning alertness (Chang et al., 2015).","Unrestricted evening tablet use delayed self-selected bedtime and disrupted circadian timing and alertness (Chinoy et al., 2018).","Lowering display melanopic content shortened sleep latency (by up to 50% in the conditions studied), prevented melatonin suppression and reduced pre-sleep alertness (Schöllhorn et al., 2023).","Blue-blocking eyewear was one component of the multicomponent protocol that advanced DLMO by about 35 minutes (Wescott et al., 2026)."],
+"fit":"Emerging adults often must work or study on screens in the evening, and they self-manage bedtime without parental routines (Chinoy et al., 2018). Tuning protects sleep without removing access, which suits students and young professionals with evening computer work.",
+"imp":["Start 2–4 hours before usual bedtime and set the schedule once on each device.","Choose tools that cut melanopic light, not just ‘warmer’ color; check product specifications.","Keep comfortable brightness so study and work remain possible.","After two weeks, review sleep-onset time and sleepiness ratings."],
+"bar":[["Night-mode apps may change color without cutting melanopic light enough","Use tools or eyewear that report melanopic reduction."],["Low compliance with glasses","Tie wearing them to a fixed cue, such as the end of dinner, and use software tuning on devices."],["Low awareness of melanopic versus photopic measures","Teach the difference using the pathway figure and ask vendors for melanopic data."]],
+"mod":["Age: younger eyes transmit more short-wavelength light, so sensitivity is greater.","Prior photic history: more daytime light dampens evening sensitivity (see Strategy 4).","Chronotype: evening types are more vulnerable to light-induced phase delays."],
+"ms":["Salivary DLMO phase","Display melanopic light logging","Actigraphy sleep-onset latency","Karolinska Sleepiness Scale"],
+"cult":"Many students rely on one phone or laptop for study, work and family contact. Tuning keeps every function and needs no household rule change, so it is the easiest option when a curfew is unrealistic."},
+{"t":"Bedroom sanctuary: no in-bed interactive media","tg":["Environment","Behavior"],
+"o":"Phones and tablets stay outside arm’s reach or outside the bedroom, and bed is not used for social media, messaging or gaming. The aim is to turn the bedroom back into a dedicated wind-down space (Bhat et al., 2018; Hartstein et al., 2024).",
+"mech":"Interactive media create cognitive and emotional arousal, trigger FOMO and keep a person ‘always connected’, displacing rest (Bhat et al., 2018; Gradisar et al., 2013). Removing the device removes notifications and the cue to check, which lowers pre-sleep social stress.",
+"ev":["Over 76% of adults keep screens in the bedroom, and young adults show the highest rates of in-bed interactive use (Gradisar et al., 2013).","High in-bed social media use was associated with 2.3 times the odds of clinical insomnia (Bhat et al., 2018).","In-bed use was also linked to higher anxiety (OR 1.37–1.73) and about double the likelihood of sleeping under 6 hours on weeknights (Bhat et al., 2018).","Young adults use social apps such as Snapchat to sustain close peer ties (Vaterlaus et al., 2016), which explains why switching off feels costly."],
+"fit":"With peer connection central to this stage (Steinberg, 2008; Vaterlaus et al., 2016), the phone is the main source of late-night arousal. A sanctuary targets that source directly and works across all four evening hours, not just the final minutes.",
+"imp":["Choose a charging spot across the room or outside the bedroom.","Replace the phone alarm with a basic alarm clock.","Set a ‘last check’ time and tell close contacts when you will be offline.","Use Do Not Disturb with exceptions for emergency contacts."],
+"bar":[["FOMO and anxiety about disconnection","Announce the offline time in advance, allow emergency exceptions and practice brief relaxation or mindfulness to ride out the urge."],["Phone used as the alarm clock","Use an inexpensive alarm clock."],["Dorms or shared apartments where the bedroom is multipurpose","Use a charging spot near the door, or a pouch or drawer, and apply the rule to in-bed use."]],
+"mod":["Interactive versus passive media: social scrolling causes more pre-sleep arousal than television (Bhat et al., 2018; Gradisar et al., 2013).","Bed-partner device use adds light and noise disruption.","Baseline distress: people with anxiety or depression lean on in-bed media to cope, and bedtime media effects vary with mental health (Schrempft et al., 2024)."],
+"ms":["Minimal Insomnia Severity Scale","Weekly in-bed social media volume (nights × minutes)","Actigraphic sleep efficiency and wake after sleep onset","PHQ-4 anxiety items"],
+"cult":"Where the phone is a family lifeline, offer a sanctuary with an exception: calls from named family members can ring through. In shared rooms, agree a common charging area."},
+{"t":"Pre-bed disconnection window (60–90 minutes)","tg":["Behavior","60–90 min"],
+"o":"A structured digital curfew powers down all light-emitting screens 60 to 90 minutes before intended sleep. The window is filled with non-screen activities such as print reading, reflective journaling, gentle stretching or audio (Chinoy et al., 2018; Green et al., 2017; Höhn et al., 2024).",
+"mech":"Stopping screens lets endogenous melatonin rise again before sleep and lowers visual and cognitive alertness. Melatonin recovered within about 50 minutes after screen use stopped (Höhn et al., 2024). Two hours of evening screen use reduced deep sleep and blunted the nocturnal drop in body temperature (Green et al., 2017).",
+"ev":["With unrestricted evening tablet use, participants chose bedtimes more than 30 minutes later (Chinoy et al., 2018).","Two hours of evening computer exposure reduced slow-wave sleep, blunted the body-temperature drop and increased next-morning omission errors on attention tasks (Green et al., 2017).","Evening smartphone use affected sleep and declarative memory consolidation (Höhn et al., 2024).","Bedtime media use is linked to sleep and daytime functioning in adults, with effects moderated by mental health (Schrempft et al., 2024)."],
+"fit":"Emerging adults set their own wind-down routines, and unrestricted screens push bedtimes later (Chinoy et al., 2018). Adults aged 18–29 recover melatonin more slowly than teenagers (Höhn et al., 2024), so a firm window matters more for them.",
+"imp":["Pick a fixed ‘screens off’ time 60–90 minutes before target sleep and set a reminder.","Plan the replacement routine: print book, journal, stretching or audio with the screen off.","Do high-stress tasks earlier, before the window opens.","On deadline nights, hold a 60-minute minimum and combine with Strategy 1 for unavoidable work."],
+"bar":[["Academic workload and late deadlines","Schedule demanding tasks earlier in the evening and keep a 60-minute minimum."],["Evening work shifts","Anchor the window to the end of the shift, not the clock."],["Bedtime procrastination from daytime leisure deficits","Protect leisure earlier in the day and use CBT-style techniques to challenge thoughts that justify staying up."]],
+"mod":["Task content and load: stressful study or work tasks create more pre-sleep arousal than relaxing leisure media.","Age: teenagers recover melatonin faster than adults aged 18–29 (Höhn et al., 2024)."],
+"ms":["Overnight PSG: deep (SWS) and REM minutes","Continuous body temperature","CPT-III omission errors and reaction time","Epworth Sleepiness Scale"],
+"cult":"Family duties and jobs run late for many students, so offer a range (60–90 minutes) and a minimum version rather than one clock time. Audio and family conversation count as wind-down."},
+{"t":"Multicomponent chronotherapy","tg":["Light","Schedule","Mood"],
+"o":"This package combines 30–60 minutes of bright morning light (outdoor sun or about 10,000 lux), a gradual 15–30 minute daily shift earlier in bed and wake times, and blue-blocking eyewear for the 2 hours before bed (Wescott et al., 2026).",
+"mech":"Morning light strengthens the 24-hour light–dark contrast and circadian amplitude, making the clock more resilient to evening screens, while the schedule shift and evening blocking move the clock earlier. Home lighting before bedtime also affects circadian timing (Burgess & Molina, 2014).",
+"ev":["Young adults with delayed sleep schedules had a ‘flattened’ light–dark profile: less daytime light and more evening device light (Van der Maren et al., 2018).","Morning bright light alone did not significantly advance circadian phase (Wescott et al., 2026).","The multicomponent package advanced DLMO by about 35 minutes and significantly reduced depressive symptoms, p < .001 (Wescott et al., 2026).","Home lighting before usual bedtime shifted circadian timing in a field study (Burgess & Molina, 2014)."],
+"fit":"Emerging adulthood is a developmental peak for delayed sleep timing (Wescott et al., 2026), and irregular school, work and weekend schedules produce social jetlag. This strategy treats the clock itself, not only evening habits.",
+"imp":["Get 30–60 minutes of outdoor light soon after waking, or use a bright-light device on dark days.","Move bed and wake times 15–30 minutes earlier, then hold them steady, including weekends where possible.","Wear blue-blocking eyewear for 2 hours before bed.","Track mood and sleep weekly and seek clinical advice if low mood persists."],
+"bar":[["Social jetlag from weekday–weekend gaps","Keep weekend wake time close to the weekday time."],["Weather or geography limits morning sun","Use a bright-light device or a window workstation."],["Multi-step protocol demands adherence","Add one component per week, using reminders and a log."]],
+"mod":["Baseline phase angle between DLMO and habitual bedtime shapes how the clock responds to light.","Depressive symptoms: misalignment worsens depression, and advancing the clock produced proportional mood gains (Wescott et al., 2026)."],
+"ms":["Salivary DLMO shift (minutes)","24-hour actigraphy and light logs","QIDS-SR depression score","Social jetlag (free-day minus work-day mid-sleep)"],
+"cult":"Shifts and family duties may limit how far bedtime can move. Prioritize the morning-light step and a consistent wake time, which cost little and fit around work and family responsibilities."}
+]
+;
+function ul(a){return"<ul class='tight'>"+a.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>"}
+document.getElementById("strats").innerHTML=S.map(function(s,i){return"<details"+(i==0?" open":"")+"><summary>Strategy "+(i+1)+": "+s.t+"</summary><div><div class='tags'>"+s.tg.map(function(g){return"<span class='tag'>"+g+"</span>"}).join("")+"</div><h3>What it is</h3><p>"+s.o+"</p><h3>How it works</h3><p>"+s.mech+"</p><h3>What the evidence shows</h3>"+ul(s.ev)+"<h3>Why it fits emerging adults</h3><p>"+s.fit+"</p><h3>Putting it into practice</h3><p class='note'>Practical steps and solutions below are guidance synthesized for this module, not findings reported by the cited studies.</p><ol class='steps'>"+s.imp.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ol><h3>Barriers and ways through</h3>"+ul(s.bar.map(function(x){return"<strong>"+x[0]+".</strong> "+x[1]}))+"<h3>Who responds most (moderators)</h3>"+ul(s.mod)+"<h3>How to measure it</h3>"+ul(s.ms)+"<h3>Culturally responsive adaptation</h3><p>"+s.cult+"</p></div></details>"}).join("");
+
+var Q=[
+{q:"Which cells detect blue-enriched screen light and signal the master clock?",a:["Rod photoreceptors in the fovea","ipRGCs containing melanopsin","Cells in the pineal gland directly"],c:1,f:"ipRGCs project to the suprachiasmatic nucleus (SCN), the master circadian pacemaker."},
+{q:"Which statement best describes the evidence for strategy 4?",a:["Morning light alone advanced the clock about 35 minutes","The combined program advanced DLMO about 35 minutes and reduced depressive symptoms","Blue-blocking glasses alone removed all delay"],c:1,f:"Morning light alone did not significantly advance phase; the multicomponent package did."},
+{q:"A student works evenings and uses a phone as her only internet access. What is the best advice?",a:["Ban all screens after 9 PM","Offer display tuning and a flexible wind-down that keeps access","Tell her emerging adulthood is a time to focus on herself"],c:1,f:"Culturally responsive advice protects sleep while preserving needed access."},
+{q:"Which program type is 5 to 7 times more likely to produce lasting change?",a:["Information-only sleep hygiene lectures","Skills training with supervised practice","A one-time handout"],c:1,f:"Supervised skills practice with home logs and reminders outperforms didactic approaches."}];
+var qd=document.getElementById("quiz");
+Q.forEach(function(o,i){
+ var fs=document.createElement("fieldset");
+ fs.innerHTML="<legend>Question "+(i+1)+" of "+Q.length+"</legend><p>"+o.q+"</p>"+o.a.map(function(x,j){return"<label><input type='radio' name='q"+i+"' value='"+j+"'><span>"+x+"</span></label>"}).join("")+"<button type='button'>Check answer</button><p class='fb' aria-live='polite'></p>";
+ fs.querySelector("button").onclick=function(){
+  var s=fs.querySelector("input:checked"),fb=fs.querySelector(".fb");
+  if(!s){fb.className="fb no";fb.textContent="Please choose an answer first.";return}
+  var ok=+s.value===o.c;fb.className="fb "+(ok?"ok":"no");
+  fb.textContent=(ok?"Correct. ":"Not quite. The best answer is: “"+o.a[o.c]+"”. ")+o.f;
+ };
+ qd.appendChild(fs);
+});
+
+var R=["Arnett, J. J. (2007). Emerging adulthood: What is it, and what is it good for? *Child Development Perspectives, 1*(2), 68–73. https://doi.org/10.1111/j.1750-8606.2007.00016.x", "Bhat, S., Pinto-Zipp, G., Upadhyay, H., & Polos, P. G. (2018). “To sleep, perchance to tweet”: In-bed electronic social media use and its associations with insomnia, daytime sleepiness, mood, and sleep duration in adults. *Sleep Health, 4*(2), 166–173. https://doi.org/10.1016/j.sleh.2017.12.004", "Burgess, H. J., & Molina, T. A. (2014). Home lighting before usual bedtime impacts circadian timing: A field study. *Photochemistry and Photobiology, 90*(3), 723–726. https://doi.org/10.1111/php.12241", "Carlson, S. E., Sparks, C. D., Dzierzewski, J. M., Baron, K. G., & Baron, D. (2026). Technology use and sleep: An examination of population data from the National Sleep Foundation. *Sleep Health, 12*(3), 496–503. https://doi.org/10.1016/j.sleh.2026.03.006", "Chang, A.-M., Aeschbach, D., Duffy, J. F., & Czeisler, C. A. (2015). Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. *Proceedings of the National Academy of Sciences, 112*(4), 1232–1237. https://doi.org/10.1073/pnas.1418490112", "Chinoy, E. D., Duffy, J. F., & Czeisler, C. A. (2018). Unrestricted evening use of light-emitting tablet computers delays self-selected bedtime and disrupts circadian timing and alertness. *Physiological Reports, 6*(10), Article e13692. https://doi.org/10.14814/phy2.13692", "Conley, C. S. (2015). SEL in higher education. In J. A. Durlak, C. E. Domitrovich, R. P. Weissberg, & T. P. Gullotta (Eds.), *Handbook of social and emotional learning: Research and practice* (pp. 197–212). The Guilford Press.", "Gradisar, M., Wolfson, A. R., Harvey, A. G., Hale, L., Rosenberg, R., & Czeisler, C. A. (2013). The sleep and technology use of Americans: Findings from the National Sleep Foundation’s 2011 Sleep in America poll. *Journal of Clinical Sleep Medicine, 9*(12), 1291–1299. https://doi.org/10.5664/jcsm.3272", "Green, A., Cohen-Zion, M., Haim, A., & Dagan, Y. (2017). Evening light exposure to computer screens disrupts human sleep, biological rhythms, and attention abilities. *Chronobiology International, 34*(7), 855–865. https://doi.org/10.1080/07420528.2017.1324878", "Hartstein, L. E., Mathew, G. M., Reichenberger, D. A., Dzierzewski, J. M., & Hale, L. (2024). The impact of screen use on sleep health across the lifespan: A National Sleep Foundation consensus statement. *Sleep Health, 10*(4), 412–421. https://doi.org/10.1016/j.sleh.2024.05.001", "Höhn, C., Hahn, M. A., Gruber, G., Pletzer, B., Cajochen, C., & Hoedlmoser, K. (2024). Effects of evening smartphone use on sleep and declarative memory consolidation in male adolescents and young adults. *Brain Communications, 6*(3), Article fcae173. https://doi.org/10.1093/braincomms/fcae173", "Katsiaficas, D., Suárez-Orozco, C., & Dias, S. I. (2014). “When do I feel like an adult?”: Latino and Afro-Caribbean immigrant-origin community college students’ conceptualizations and experiences of (emerging) adulthood. *Emerging Adulthood, 3*(2), 98–112. https://doi.org/10.1177/2167696814548059", "Roisman, G. I., Masten, A. S., Coatsworth, J. D., & Tellegen, A. (2004). Salient and emerging developmental tasks in the transition to adulthood. *Child Development, 75*(1), 123–133. https://doi.org/10.1111/j.1467-8624.2004.00658.x", "Schöllhorn, I., Stefani, O., Lucas, R. J., Spitschan, M., Slawik, H. C., & Cajochen, C. (2023). Melanopic irradiance defines the impact of evening display light on sleep latency, melatonin and alertness. *Communications Biology, 6*(1), Article 228. https://doi.org/10.1038/s42003-023-04598-4", "Schrempft, S., Haario, P., Folker, A. P., Jennum, P. J., & Andersen, S. (2024). Associations between bedtime media use, sleep, and daytime functioning in adults: The moderating role of mental health. *Sleep Medicine, 121*, 226–235. https://doi.org/10.1016/j.sleep.2024.06.029", "Steinberg, L. (2008). A social neuroscience perspective on adolescent risk-taking. *Developmental Review, 28*(1), 78–106. https://doi.org/10.1016/j.dr.2007.08.002", "Tsipianitis, D., & Karalis, T. (2019). What is the role of social and cultural factors of the transition to adulthood and how these factors are influenced? An examination of Greek higher education students. *IFAC-PapersOnLine, 52*(25), 293–298. https://doi.org/10.1016/j.ifacol.2019.12.538", "Van der Maren, M., Moderie, C., Duclos, C., Paquet, J., & Dumont, M. (2018). Daily profiles of light exposure and evening use of light-emitting devices in young adults with a delayed sleep schedule. *Journal of Biological Rhythms, 33*(2), 192–202. https://doi.org/10.1177/0748730418757007", "Vaterlaus, J. M., Barnett, K., Roche, C., & Young, J. A. (2016). “Snapchat is more personal”: An exploratory study on Snapchat behaviors and young adult interpersonal relationships. *Computers in Human Behavior, 62*, 594–601. https://doi.org/10.1016/j.chb.2016.04.029", "Wescott, D. L., Klevens, A. M., Taylor, M. L., Roecklein, K. A., & Hasler, B. P. (2026). Developing multicomponent chronotherapeutic interventions for emerging adults with delayed sleep timing. *Journal of Clinical Sleep Medicine, 22*(2), 156–162. https://doi.org/10.1007/s44470-026-00171-y"];
+function fmt(r){return r.replace(/&/g,"&amp;").replace(/\*([^*]+)\*/g,"<i>$1</i>").replace(/(https:\/\/\S+)/,"<a href=\"$1\">$1</a>")}
+document.getElementById("reflist").innerHTML=R.map(function(r){return"<li>"+fmt(r)+"</li>"}).join("");
+var T="This module explains how evening screen use affects sleep and the body clock in emerging adults, ages 18 to 29. Screens give off blue-enriched light that reaches special retinal cells, which signal the brain’s master clock. Evening exposure can suppress melatonin by 50 to 55 percent, delay the body clock by 33 to 90 minutes or more, and lengthen the time it takes to fall asleep by up to 50 percent. Using social media in bed is linked to 2.3 times the odds of insomnia, and to higher anxiety. The module presents four strategies. First, tuning display light in the evening. Second, keeping interactive media out of bed. Third, a 60 to 90 minute screen-free window before sleep. Fourth, a combined program of morning light, a gradually earlier schedule and evening blue-blocking glasses, which advanced the body clock by about 35 minutes and improved mood. Advice must fit cultural and family realities, so avoid blanket bans. Skills grow through supervised practice, not information alone. Finish with the knowledge check.";
+document.getElementById("trans").textContent=T;
+(function(){var ss=window.speechSynthesis,pb=document.getElementById("play"),sb=document.getElementById("stop"),st=document.getElementById("astat"),rt=document.getElementById("rate"),state="idle";
+if(!ss||!window.SpeechSynthesisUtterance){pb.disabled=true;sb.disabled=true;rt.disabled=true;st.textContent="Audio is not supported in this browser. Please read the transcript.";return}
+function label(){pb.textContent=state=="idle"?"Play summary":state=="play"?"Pause":"Resume"}
+function start(){ss.cancel();var parts=T.match(/[^.]+\./g)||[T];parts.forEach(function(p,i){var u=new SpeechSynthesisUtterance(p.trim());u.lang="en";u.rate=+rt.value;if(i==parts.length-1){u.onend=function(){state="idle";label();st.textContent="Finished."}}ss.speak(u)});state="play";label();st.textContent="Playing."}
+pb.onclick=function(){if(state=="idle"){start()}else if(state=="play"){ss.pause();state="pause";label();st.textContent="Paused."}else{ss.resume();state="play";label();st.textContent="Playing."}};
+sb.onclick=function(){ss.cancel();state="idle";label();st.textContent="Stopped."};
+rt.onchange=function(){st.textContent="Speed applies the next time you press Play."};
+window.addEventListener("pagehide",function(){ss.cancel()});
+})();
+</script>
+</body>
+</html>
